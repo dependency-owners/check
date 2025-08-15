@@ -1,0 +1,24 @@
+name: 'Check Unowned Dependencies'
+description: ' GitHub Action to check for unowned dependencies using dependency-owners '
+author: 'Kirk Eaton <contact@kirkeaton.ca>'
+branding:
+  color: 'green'
+  icon: 'user-check'
+inputs:
+  config-file:
+    description: 'Path to the configuration file.'
+    type: 'string'
+  dependency-file:
+    description: 'Path to the dependency file.'
+    type: 'string'
+  loader:
+    description: 'Loader to use for loading dependencies.'
+    type: 'string'
+outputs:
+  unowned-dependencies:
+    description: 'List of unowned dependencies found.'
+  unowned-dependencies-found:
+    description: 'Boolean value to indicate if unowned dependencies were found.'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
