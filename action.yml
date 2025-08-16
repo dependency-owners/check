@@ -22,6 +22,6 @@ outputs:
     description: 'List of unowned dependencies found.'
   unowned-dependencies-found:
     description: 'Boolean value to indicate if unowned dependencies were found.'
-  using: 'node20'
 runs:
+  using: 'node20'
   main: 'dist/index.js'
