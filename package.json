@@ -1,7 +1,7 @@
 {
-  "name": "react",
+  "name": "check",
   "version": "0.0.0-development",
-  "description": " GitHub Action to check for unowned dependencies using dependency-owners ",
+  "description": "GitHub Action to check for unowned dependencies using dependency-owners ",
   "author": "Kirk Eaton <contact@kirkeaton.ca>",
   "bugs": {
     "url": "https://github.com/dependency-owners/check/issues"
