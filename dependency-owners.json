@@ -1,14 +1,1 @@
-{
-  "kirkeaton": [
-    "@actions/core",
-    "@kirkeaton/prettier-config",
-    "@kirkeaton/semantic-release-config",
-    "@kirkeaton/tsconfig",
-    "@types/node",
-    "dependency-owners",
-    "esbuild",
-    "prettier",
-    "semantic-release",
-    "typescript"
-  ]
-}
+{}
