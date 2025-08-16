@@ -4,8 +4,9 @@ import {
   setOutput,
   type AnnotationProperties,
 } from '@actions/core';
-import { dependencyOwners, DependencyOwnersOptions } from 'dependency-owners';
+import { dependencyOwners } from 'dependency-owners';
 import { getUnownedDependencies } from 'dependency-owners/utils';
+import { readFile } from 'node:fs/promises';
 
 /**
  * Checks for unowned dependencies in the project.
@@ -17,28 +18,29 @@ export const checkUnownedDependencies = async (): Promise<boolean> => {
   const dependencyFile = getInput('dependency-file');
   const loader = getInput('loader');
 
-  // Build options for dependency-owners
-  const options: DependencyOwnersOptions = {};
-  if (configFile) {
-    options.configFile = configFile;
-  }
-  if (dependencyFile) {
-    options.dependencyFile = dependencyFile;
-  }
-  if (loader) {
-    options.loader = loader;
-  }
-
   // Run dependency-owners
-  const results = await dependencyOwners(options);
+  const results = await dependencyOwners({
+    configFile,
+    dependencyFile,
+    loader,
+  });
 
   // Get unowned dependencies
   const unownedDeps = getUnownedDependencies(results);
   if (unownedDeps.length > 0) {
-    const properties: AnnotationProperties = {
-      file: dependencyFile,
-    };
-    error(`Found unowned dependencies: ${unownedDeps.join(', ')}`, properties);
+    const fileContent = await readFile(dependencyFile, 'utf-8');
+    const lines = fileContent.split('\n');
+
+    unownedDeps.forEach((dep: string) => {
+      const properties: AnnotationProperties = {
+        file: dependencyFile,
+      };
+      const startLine = lines.findIndex((line) => line.includes(dep)) + 1;
+      if (startLine > 0) {
+        properties.startLine = startLine;
+      }
+      error(`Found unowned dependency: ${dep}`, properties);
+    });
   }
   setOutput('unowned-dependencies', unownedDeps);
   setOutput('unowned-dependencies-found', unownedDeps.length > 0);
