@@ -6,6 +6,7 @@ import {
 } from '@actions/core';
 import { dependencyOwners, DependencyOwnersOptions } from 'dependency-owners';
 import { getUnownedDependencies } from 'dependency-owners/utils';
+import path from 'node:path';
 
 /**
  * Checks for unowned dependencies in the project.
@@ -33,7 +34,7 @@ export const checkUnownedDependencies = async (): Promise<boolean> => {
   const unownedDeps = getUnownedDependencies(results);
   if (unownedDeps.length > 0) {
     const properties: AnnotationProperties = {
-      file: dependencyFile,
+      file: path.resolve(dependencyFile),
     };
     error(`Found unowned dependencies: ${unownedDeps.join(', ')}`, properties);
   }
