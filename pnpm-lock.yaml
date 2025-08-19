@@ -12,8 +12,8 @@ importers:
         specifier: 1.11.1
         version: 1.11.1
       dependency-owners:
-        specifier: 1.1.1
-        version: 1.1.1
+        specifier: 1.2.2
+        version: 1.2.2
     devDependencies:
       '@kirkeaton/prettier-config':
         specifier: 1.0.5
@@ -66,11 +66,11 @@ packages:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
     engines: {node: '>=0.1.90'}
 
-  '@dependency-owners/package-json-loader@1.0.0':
-    resolution: {integrity: sha512-b0RZ5GIjoRCBQIJj8Cm2wnp26Kl9UrAcJSKiRrLPXUBuXeqcipOaxAiKU6fEu/ISpU3+nftsG0P1swQuU0uWRQ==}
+  '@dependency-owners/package-json-loader@2.0.0':
+    resolution: {integrity: sha512-QCYZ4acwcmpdbKhrkP/smishYTTObJEA08c2iLLAXRU2FCby2AtftjZJGFQ1GP0TtPA5ih6lJ0s2/ybTtPEsyg==}
     engines: {node: '>=20'}
     peerDependencies:
-      dependency-owners: '>=1.0.0'
+      dependency-owners: '>=1.2.1'
 
   '@esbuild/aix-ppc64@0.25.9':
     resolution: {integrity: sha512-OaGtL73Jck6pBKjNIe24BnFE6agGl+6KxDtTfHhy1HmhthfKouEcOhqpSL64K4/0WCtbKFLOdzD/44cJ4k9opA==}
@@ -532,8 +532,8 @@ packages:
     resolution: {integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==}
     engines: {node: '>=4.0.0'}
 
-  dependency-owners@1.1.1:
-    resolution: {integrity: sha512-yC+uePXGxgTkVo3+JqTpjRhYwnNwS7oKygaPPC96EGoexAYJqhaT0xvbgLRzwWVVGIG+gmQWViJpDqgHeqHK+Q==}
+  dependency-owners@1.2.2:
+    resolution: {integrity: sha512-0coa2Ntj1J8JqbOPKAaErmsgqXSiSBEZAF/2omtn/py47Vb7OjFwUhhq5/e5CGImzDzVuAgdbg5WKx/Ukv6LDg==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -1436,9 +1436,9 @@ snapshots:
   '@colors/colors@1.5.0':
     optional: true
 
-  '@dependency-owners/package-json-loader@1.0.0(dependency-owners@1.1.1)':
+  '@dependency-owners/package-json-loader@2.0.0(dependency-owners@1.2.2)':
     dependencies:
-      dependency-owners: 1.1.1
+      dependency-owners: 1.2.2
 
   '@esbuild/aix-ppc64@0.25.9':
     optional: true
@@ -1853,9 +1853,9 @@ snapshots:
 
   deep-extend@0.6.0: {}
 
-  dependency-owners@1.1.1:
+  dependency-owners@1.2.2:
     dependencies:
-      '@dependency-owners/package-json-loader': 1.0.0(dependency-owners@1.1.1)
+      '@dependency-owners/package-json-loader': 2.0.0(dependency-owners@1.2.2)
       '@stricli/core': 1.2.0
 
   dir-glob@3.0.1:
