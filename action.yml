@@ -1,5 +1,5 @@
 name: 'Check Unowned Dependencies'
-description: ' GitHub Action to check for unowned dependencies using dependency-owners '
+description: 'GitHub Action to check for unowned dependencies using dependency-owners'
 author: 'Kirk Eaton <contact@kirkeaton.ca>'
 branding:
   color: 'green'
