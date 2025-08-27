@@ -1,6 +1,7 @@
 {
   "kirkeaton": [
     "@actions/core",
+    "@dependency-owners/package-json-loader",
     "@kirkeaton/prettier-config",
     "@kirkeaton/semantic-release-config",
     "@kirkeaton/tsconfig",
