@@ -9,12 +9,12 @@ See [action.yml](action.yml)
 ```yaml
 - uses: dependency-owners/check@v1
   with:
-    # (Optional) Path to the configuration file.
+    # Path to the configuration file. Default: 'dependency-owners.json'
     config-file: ''
 
-    # (Optional) Path to the dependency file.
+    # Path to the dependency file. Default: 'package.json'
     dependency-file: ''
 
-    # (Optional) Loader to use for loading dependencies.
+    # Loader to use for loading dependencies. Default: '@dependency-owners/package-json-loader'
     loader: ''
 ```

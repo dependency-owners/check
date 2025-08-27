@@ -8,12 +8,15 @@ inputs:
   config-file:
     description: 'Path to the configuration file.'
     type: 'string'
+    default: 'dependency-owners.json'
   dependency-file:
     description: 'Path to the dependency file.'
     type: 'string'
+    default: 'package.json'
   loader:
     description: 'Loader to use for loading dependencies.'
     type: 'string'
+    default: '@dependency-owners/package-json-loader'
 outputs:
   unowned-dependencies:
     description: 'List of unowned dependencies found.'
