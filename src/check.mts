@@ -17,17 +17,18 @@ export const checkUnownedDependencies = async (): Promise<boolean> => {
   const dependencyFile = getInput('dependency-file', { required: true });
   const loader = getInput('loader', { required: true });
 
+  // Determine paths for loader resolution
+  const paths = [];
+  if (process.env.GITHUB_WORKSPACE) {
+    paths.push(process.env.GITHUB_WORKSPACE);
+  }
+
   // Build options for dependency-owners
-  const options: DependencyOwnersOptions = {};
-  if (configFile) {
-    options.configFile = configFile;
-  }
-  if (dependencyFile) {
-    options.dependencyFile = dependencyFile;
-  }
-  if (loader) {
-    options.loader = loader;
-  }
+  const options: DependencyOwnersOptions = {
+    configFile,
+    dependencyFile,
+    loader: require.resolve(loader, { paths }),
+  };
 
   // Run dependency-owners
   const results = await dependencyOwners(options);
