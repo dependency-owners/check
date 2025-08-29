@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@actions/core": "1.11.1",
-    "dependency-owners": "2.1.0"
+    "dependency-owners": "3.0.0"
   },
   "devDependencies": {
     "@dependency-owners/package-json-loader": "2.0.0",
