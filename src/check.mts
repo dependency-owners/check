@@ -14,8 +14,8 @@ import { getUnownedDependencies } from 'dependency-owners/utils';
 export const checkUnownedDependencies = async (): Promise<boolean> => {
   // Inputs
   const configFile = getInput('config-file');
-  const dependencyFile = getInput('dependency-file');
-  const loader = getInput('loader');
+  const dependencyFile = getInput('dependency-file', { required: true });
+  const loader = getInput('loader', { required: true });
 
   // Build options for dependency-owners
   const options: DependencyOwnersOptions = {};

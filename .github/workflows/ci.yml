@@ -32,6 +32,9 @@ jobs:
         name: Check unowned dependencies
         continue-on-error: true
         uses: ./
+        with:
+          dependency-file: 'package.json'
+          loader: '@dependency-owners/package-json-loader'
       - name: Test action
         run: |
           if [[ "${{ steps.check-unowned-dependencies.outputs.unowned-dependencies }}" != "[]" ]]; then
