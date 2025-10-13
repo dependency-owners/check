@@ -1,6 +1,7 @@
 name: CI
 permissions:
   contents: read
+  pull-requests: write
 on:
   push:
     branches:
@@ -43,5 +44,10 @@ jobs:
           if [[ "${{ steps.check-unowned-dependencies.outputs.unowned-dependencies-found }}" == "true" ]]; then
             exit 1
           fi
+      - name: Assign reviewers to dependency changes
+        uses: dependency-owners/assign@109b250260c641d9149526d3297d95ad786b8ec3 # v1.0.1
+        with:
+          dependency-file: 'package.json'
+          loader: '@dependency-owners/package-json-loader'
       - name: Check dist for changes
         run: git diff --exit-code --quiet ./dist
