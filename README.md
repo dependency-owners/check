@@ -7,7 +7,7 @@ GitHub Action to check for unowned dependencies using [dependency-owners](https:
 See [action.yml](action.yml)
 
 ```yaml
-- uses: dependency-owners/check@v1
+- uses: dependency-owners/check@v2
   with:
     # Path to the configuration file. Default: 'dependency-owners.json'
     config-file: ''
