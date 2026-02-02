@@ -7,7 +7,7 @@
     "url": "https://github.com/dependency-owners/check/issues"
   },
   "dependencies": {
-    "@actions/core": "2.0.2",
+    "@actions/core": "2.0.3",
     "dependency-owners": "3.0.3"
   },
   "devDependencies": {
