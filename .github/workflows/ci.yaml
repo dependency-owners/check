@@ -43,7 +43,7 @@ jobs:
             exit 1
           fi
       - name: Assign reviewers to dependency changes
-        uses: dependency-owners/assign@be535ca88bd053ab00497b412c845620e6644121 # v2.0.15
+        uses: dependency-owners/assign@3fe3500ed1c119b1a42206db485bd95f973d4c8c # v2.0.17
         with:
           dependency-file: 'package.json'
           loader: '@dependency-owners/package-json-loader'
