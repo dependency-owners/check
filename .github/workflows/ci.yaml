@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Setup Node.js
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
@@ -43,7 +43,7 @@ jobs:
             exit 1
           fi
       - name: Assign reviewers to dependency changes
-        uses: dependency-owners/assign@be535ca88bd053ab00497b412c845620e6644121 # v2.0.15
+        uses: dependency-owners/assign@3fe3500ed1c119b1a42206db485bd95f973d4c8c # v2.0.17
         with:
           dependency-file: 'package.json'
           loader: '@dependency-owners/package-json-loader'
