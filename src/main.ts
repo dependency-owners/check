@@ -1,6 +1,6 @@
 import { setFailed } from '@actions/core';
 
-import { checkUnownedDependencies } from './check.mjs';
+import { checkUnownedDependencies } from './check.js';
 
 const run = async () => {
   try {
